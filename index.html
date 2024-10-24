@@ -25,22 +25,28 @@
             // Add ID and class to the timer element
             $("#seconds").parent().attr('id', 'timer').addClass('timer-background');
 
-            buttonStart.onclick = function () {
+            // Changing the codes for JQuery with colors
+            $buttonStart.on('click', function () {
                 clearInterval(interval);
                 interval = setInterval(startTimer, 10);
-            }
+                $("#timer").css('background-color', 'rgb(51, 165, 50)');
+                setInterval(animateBackground, 1000);
+            });
 
-            buttonStop.onclick = function () {
+            $buttonStop.on('click', function () {
                 clearInterval(interval);
-            }
+                $("#timer").css('background-color', 'rgb(251, 18, 47)');
+                $("#timer").stop(true, true);
+            });
 
-            buttonReset.onclick = function () {
+            $buttonReset.on('click', function () {
                 clearInterval(interval);
                 tens = "00";
                 seconds = "00";
-                appendTens.innerHTML = tens;
-                appendSeconds.innerHTML = seconds;
-            }
+                $appendTens.html(tens);
+                $appendSeconds.html(seconds);
+                $("#timer").css('background-color', 'grey');
+            });
 
             function startTimer() {
                 tens++;
