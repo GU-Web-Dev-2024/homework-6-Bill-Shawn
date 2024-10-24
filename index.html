@@ -11,6 +11,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HW6 - JQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        .wrapper {
+            text-align: center;
+            padding: 20px;
+            background-image: url('image.jpg');
+        }
+    </style>
     <script>
         $(document).ready(function () {
             var seconds = "00";
@@ -88,8 +97,15 @@
             }
 
 
-
-
+            // Style the stopwatch using JQuery
+            $("#timer").css({
+                'border': '5px solid orange',
+                'background-color': 'black',
+                'color': 'white',
+                'font-size': '24px',
+                'padding': '10px',
+                'border-radius': '10px'
+            });
 
 
         });
