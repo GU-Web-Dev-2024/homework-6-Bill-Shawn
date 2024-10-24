@@ -20,8 +20,10 @@
             var $buttonStart = $('#button-start');
             var $buttonStop = $('#button-stop');
             var $buttonReset = $('#button-reset');
-
             var interval;
+
+            // Add ID and class to the timer element
+            $("#seconds").parent().attr('id', 'timer').addClass('timer-background');
 
             buttonStart.onclick = function () {
                 clearInterval(interval);
